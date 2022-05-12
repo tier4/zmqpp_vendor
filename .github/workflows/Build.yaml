@@ -39,8 +39,6 @@ jobs:
         with:
           package-name: ${{ steps.list_packages.outputs.package_list }}
           target-ros2-distro: ${{ matrix.rosdistro }}
-          vcs-repo-file-url: dependency_${{ matrix.rosdistro }}.repos
-          extra-cmake-args: -DWITH_INTEGRATION_TEST=ON
           colcon-defaults: |
             {
               "build": {
