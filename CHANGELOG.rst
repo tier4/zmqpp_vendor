@@ -2,8 +2,8 @@
 Changelog for package zmqpp_vendor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.1 (2022-05-12)
+------------------
 * add export libraries line
 * add status budge
 * configure triggers
