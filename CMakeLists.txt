@@ -31,6 +31,7 @@ endmacro()
 
 build_zmqpp()
 ament_export_include_directories(include)
+ament_export_libraries(zmqpp)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
