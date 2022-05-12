@@ -9,24 +9,24 @@ on:
 jobs:
   build:
     name: build
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.rosdistro[0] }}
     timeout-minutes: 120
     strategy:
       fail-fast: false
       max-parallel: 8
       matrix:
-        rosdistro: [galactic]
+        rosdistro: [[ubuntu-20.04, galactic], [ubuntu-20.04, foxy], [ubuntu-20.04, rolling], [ubuntu-22.04, rolling]]
     env:
-      ROS_DISTRO: ${{ matrix.rosdistro }}
+      ROS_DISTRO: ${{ matrix.rosdistro[1] }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2-beta
         with:
           fetch-depth: 0
-      - name: Setup ROS2 ${{ matrix.rosdistro }} environment
+      - name: Setup ROS2 ${{ matrix.rosdistro[1] }} environment
         uses: ros-tooling/setup-ros@v0.2
         with:
-          required-ros-distributions: ${{ matrix.rosdistro }}
+          required-ros-distributions: ${{ matrix.rosdistro[1] }}
       - name: Search packages in this repository
         id: list_packages
         run: |
@@ -38,7 +38,7 @@ jobs:
         uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: ${{ steps.list_packages.outputs.package_list }}
-          target-ros2-distro: ${{ matrix.rosdistro }}
+          target-ros2-distro: ${{ matrix.rosdistro[1] }}
           colcon-defaults: |
             {
               "build": {
