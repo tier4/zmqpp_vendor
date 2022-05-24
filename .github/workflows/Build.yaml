@@ -22,9 +22,9 @@ jobs:
           [ubuntu-18.04, eloquent],
           [ubuntu-20.04, foxy],
           [ubuntu-20.04, galactic],
-          [ubuntu-22.04, humble],
-          [ubuntu-20.04, rolling],
-          [ubuntu-22.04, rolling]]
+          #[ubuntu-22.04, humble],
+          [ubuntu-20.04, rolling]] #,
+          #[ubuntu-22.04, rolling]]
     env:
       ROS_DISTRO: ${{ matrix.rosdistro[1] }}
     steps:
