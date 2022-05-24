@@ -2,8 +2,8 @@
 Changelog for package zmqpp_vendor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2022-05-24)
+------------------
 * Merge pull request `#5 <https://github.com/tier4/zmqpp_vendor/issues/5>`_ from tier4/fix/default_branch_name
 * fix default branch name
 * Merge pull request `#3 <https://github.com/tier4/zmqpp_vendor/issues/3>`_ from tier4/feature/add_22_04_support
